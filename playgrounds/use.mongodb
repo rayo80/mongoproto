@@ -1,0 +1,2 @@
+use('RomaDBgps');
+db.trackers.find({});
