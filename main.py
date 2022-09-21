@@ -20,5 +20,5 @@ print(position_44)
 valor=pst.singleprotodatatest(position_44)
 #valor = pst.singleprototest()
 print(valor)
-#sv.enviar_proto(valor)
+sv.enviar_proto(valor)
 
