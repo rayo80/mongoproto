@@ -1,4 +1,5 @@
 import zenbus_pb2 as zpb2
+import datetime
 
 def singleprototest():
     provpost = zpb2.SingleProviderPost()
@@ -7,7 +8,6 @@ def singleprototest():
     position.latitude = 48.8584
     position.longitude = 2.2945
     position.utc_millis = 1234567890123
-
     valor = provpost.SerializeToString()
     return valor
 
@@ -18,6 +18,7 @@ def singleprotodatatest(value):
     position = provpost.pos.add()
     position.latitude = value["position"]["coordinates"][0]
     position.longitude = value["position"]["coordinates"][1]
-    position.utc_millis = 1234567890123
+    position.utc_millis = int(value["hora"].timestamp() * 1000)
+    print(position.utc_millis)
     valor = provpost.SerializeToString()
     return valor
