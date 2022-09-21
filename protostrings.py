@@ -10,3 +10,14 @@ def singleprototest():
 
     valor = provpost.SerializeToString()
     return valor
+
+
+def singleprotodatatest(value):
+    provpost = zpb2.SingleProviderPost()
+    provpost.provider_id = value["unidad"]
+    position = provpost.pos.add()
+    position.latitude = value["position"]["coordinates"][0]
+    position.longitude = value["position"]["coordinates"][1]
+    position.utc_millis = 1234567890123
+    valor = provpost.SerializeToString()
+    return valor
