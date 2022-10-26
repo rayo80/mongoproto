@@ -3,7 +3,7 @@ import os
 import requests
 
 # BETA LOCAL
-api = "http:zenbus.net/provider/post.proto?apiKey=test"
+api = "https://zenbus.net/provider/post.proto?apiKey=test"
 
 
 def enviar_proto(valor):

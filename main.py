@@ -17,10 +17,21 @@ results = collection.find()
 
 unit44 = collection.find_one({"unidad" : 44})
 unit27 = collection.find({"unidad" : 27})
-print(unit27)
-valor=pst.singleprotodatatest(unit44)
 
-#valor = pst.double_prototest()
+"""
+valor=pst.singleprotodatatest(unit44)
+answer = sv.enviar_proto(valor)
+print(answer.json())
+"""
+
+
+#proveedor: tracker del padron 49
+#vehiculo: detalles del vehiculo al que se asocia a la unidad 27
+
+#single provider  pos: significa que enviaremos posiciones de un solo
+#                      proveedor
+
 valor = pst.decode_pos_forunit(unit27)
-#sv.enviar_proto(valor)
+answer = sv.enviar_proto(valor)
+print(answer.json())
 
